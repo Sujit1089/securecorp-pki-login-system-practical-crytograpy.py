@@ -1,29 +1,34 @@
 # SecureCorp PKI Login System
-## ST6051CEM Practical Cryptography — Sujit Kafle (230378)
+
+A PKI-based secure authentication system built for ST6051CEM Practical Cryptography.
+
+## Features
+- Certificate-based login (no passwords) using X.509 / PKCS#12
+- RSA-4096 Root CA + RSA-2048 user certificates
+- Challenge-response authentication (anti-replay)
+- Digital document signing (RSA-PSS / SHA-256)
+- Hybrid message encryption (RSA-OAEP + AES-256-GCM)
+- Certificate revocation (CRL)
+- Full audit logging
 
 ## Installation
-```
+
+```bash
 pip install flask cryptography
 python app.py
 ```
-Open http://localhost:5001
 
-## Default Admin Login
-- File: admin_certificate.p12 (auto-generated on first run)
+Then open http://localhost:5000
+
+## Default Admin
+- Username: admin
+- P12 file: admin_certificate.p12 (auto-generated on first run)
 - Password: Admin@1234
 
-## Project Structure
-- app.py            → Flask web app (all routes & logic)
-- crypto_utils.py   → All cryptographic operations (CA, certs, signatures, encryption)
-- templates/        → 11 HTML templates (dark PKI-themed UI)
-
-## Features
-- PKI certificate-based login (no passwords)
-- RSA-4096 Root CA + RSA-2048 user certificates (X.509v3)
-- PKCS#12 encrypted keystores
-- Challenge-response authentication (anti-replay)
-- Digital document signing (RSA-PSS / SHA-256)
-- Signature verification
-- Hybrid encryption (RSA-OAEP + AES-256-GCM)
-- Certificate revocation (admin panel)
-- Full audit logging (SQLite)
+## Use Cases
+1. Secure employee login without passwords
+2. Document signing and non-repudiation
+3. Encrypted inter-department messaging
+# securecorp-pki-login-system-practical-crytograpy.py
+# securecorp-pki-login-system-practical-crytograpy.py
+# securecorp-pki-login-system-practical-crytograpy.py
